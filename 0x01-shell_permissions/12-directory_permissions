@@ -1,2 +1,2 @@
 #!/bin/bash
-chgrp let hello
+chmod a+X *
