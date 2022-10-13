@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Uses while and if to display Best School and Hi on 9th iteration
+i=1
+while [ $i -lt 11 ];
+do
+	if [ $i == 10 ]; then
+		echo "Hi"
+	fi
+	echo "Best School"
+	((i++))
+done
