@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kills an infinite loop without using kill or killall
+pkill -f 4-to_infinity_and_beyond
