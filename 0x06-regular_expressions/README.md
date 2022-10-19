@@ -1,2 +1,0 @@
-# Regular Expression
-* Language: **Ruby**
