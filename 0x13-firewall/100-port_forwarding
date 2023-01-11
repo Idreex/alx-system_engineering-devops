@@ -8,9 +8,12 @@
 #   ufw-before-forward
 #
 
+## Section added to allow port 80 to forward to 8080
 *nat
 :PREROUTING ACCEPT [0:0]
 -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+# end of added section
 
 # Don't delete these required lines, otherwise there will be errors
 *filter
@@ -36,14 +39,12 @@
 
 # ok icmp codes for INPUT
 -A ufw-before-input -p icmp --icmp-type destination-unreachable -j ACCEPT
--A ufw-before-input -p icmp --icmp-type source-quench -j ACCEPT
 -A ufw-before-input -p icmp --icmp-type time-exceeded -j ACCEPT
 -A ufw-before-input -p icmp --icmp-type parameter-problem -j ACCEPT
 -A ufw-before-input -p icmp --icmp-type echo-request -j ACCEPT
 
 # ok icmp code for FORWARD
 -A ufw-before-forward -p icmp --icmp-type destination-unreachable -j ACCEPT
--A ufw-before-forward -p icmp --icmp-type source-quench -j ACCEPT
 -A ufw-before-forward -p icmp --icmp-type time-exceeded -j ACCEPT
 -A ufw-before-forward -p icmp --icmp-type parameter-problem -j ACCEPT
 -A ufw-before-forward -p icmp --icmp-type echo-request -j ACCEPT
@@ -71,11 +72,11 @@
 
 # allow MULTICAST mDNS for service discovery (be sure the MULTICAST line above
 # is uncommented)
--A ufw-before-input -p udp -d 100.26.167.200 --dport 5353 -j ACCEPT
+-A ufw-before-input -p udp -d 224.0.0.251 --dport 5353 -j ACCEPT
 
 # allow MULTICAST UPnP for service discovery (be sure the MULTICAST line above
 # is uncommented)
--A ufw-before-input -p udp -d 54.236.27.195 --dport 1900 -j ACCEPT
+-A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
 
 # don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
