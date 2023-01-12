@@ -20,7 +20,7 @@
 # then
 #   domain_information "$1" "$2"
 # fi
-#-- To be evaluated --
+#-- To be evaluated ---
 
 subdomains_all=( "www" "lb-01" "web-01" "web-02" )
 
