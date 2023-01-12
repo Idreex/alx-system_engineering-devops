@@ -48,6 +48,6 @@ frontend  techno-smart.tech-https-frontend
 
 backend techno-smart.tech-backend
         balance roundrobin
-        server 61065-web-01 3.94.213.228:80 check
-        server 61065-web-02 100.26.161.102:80 check
+        server 61065-web-01 100.26.167.200:80 check
+        server 61065-web-02 54.236.27.195:80 check
 # end of parameters
