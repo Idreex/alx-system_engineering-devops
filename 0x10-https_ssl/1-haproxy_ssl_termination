@@ -48,5 +48,5 @@ frontend  techno-smart.tech-https-frontend
 backend nginx_webservers
         balance roundrobin
         server 61065-web-01 100.26.167.200:80 check
-        server 61590-web-02 54.236.27.195:80 check
+        server 61065-web-02 54.236.27.195:80 check
 # end of parameters
